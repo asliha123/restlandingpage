@@ -1,0 +1,54 @@
+<div class="row" id="d1">
+    <div class="col-6">
+        <img class="w-75" src="https://i.postimg.cc/wjPnHGtF/3-removebg-preview.png" alt="no image">
+    </div>
+
+    <div class="col-6">
+        <div class="container p-1 my-1 ms-1">
+            <h3 class="my-5">Find Your
+                <span id="f" class="fs-1 text-danger">Favourite</span>
+                <br> <span id="f" class="fs-1 text-danger">Food</span> With Me
+            </h3>
+            <p id="f" class="text-danger">{{data}}</p>
+            <p id="f" class="fs-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum asperiores modi enim
+                aperiam molestiae ratione perspiciatis atque ab officiis totam temporibus eius iure</p>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="row">
+
+
+    <div class=" container w-50 mt-5">
+        <label for="" class="d-flex border rounded shadow-lg">
+            <!-- <input (change)="method2($event)" [placeholder]="placeholderData" type="text" class="form-control"> -->
+            <!-- <input #searchData [placeholder]="placeholderData" type="text" class="form-control"> -->
+            <input [(ngModel)]="restName" name="n1" [placeholder]="placeholderData" type="text" class="form-control">
+
+            <i class="fa-solid fa-lx mt-2 ms-1 fa-magnifying-glass"></i>
+        </label>
+        <!-- <button (click)="method1()">click</button> -->
+    </div>
+    <div class=" m-5 row">
+        
+            <div *ngFor="let i of restList | search  : restName : 'name' " class="card col-lg-3  m-5" style="width: 18rem;">
+
+                <a routerLink="single/{{i.id}}" style="text-decoration: none;">
+                    <img [src]="i.photograph" class="card-img-top" alt="..">
+
+                </a>
+                <div class="card-body">
+                    <h2 id="f" class="card-title text-danger text-center">{{i.name}}</h2>
+                    <p class="card-text">{{i.address}}t</p>
+
+                </div>
+
+            </div>
+
+
+        
+
+    </div>
+</div>
